@@ -40,9 +40,9 @@ nav {
     /* border-bottom: 1px solid #9a9a9a; */
     /* background: linear-gradient(to right,
                 #000000, #040c00); */
-                background: linear-gradient(to right,
-                            #ADA996, #F2F2F2, #DBDBDB, #EAEAEA);
-                transition: top 0.6s ease;
+    background: linear-gradient(to right,
+        #ADA996, #F2F2F2, #DBDBDB, #EAEAEA);
+    transition: top 0.6s ease;
 }
 
 nav.off {
@@ -83,7 +83,8 @@ ul.menu > li:hover {
     color: #000000;
     cursor: pointer;
     /* font-weight: 400; */
-    margin-top: 8px;
+    margin-top: 10px;
+    text-shadow: 0px 1px 1px rgba(52, 52, 52, 0.2);
 }
 
 header {
@@ -405,15 +406,14 @@ div.backgroundPhotoSeparator {
 
 body.bg1 {
     background-image: url('img/bg1.jpg');
-
 }
 
 body.bg2 {
-    background-image: url('img/photo01.jpeg');
+    background-image: url('img/photo02.jpeg');
 }
 
 body.bg3 {
-    background-image: url('img/photo02.jpeg');
+    background-image: url('img/photo01.jpeg');
 }
 
 body.bg4 {
