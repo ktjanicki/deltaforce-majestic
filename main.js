@@ -1,19 +1,3 @@
-// function scrollToAboutSection(section) {
-//   // Znajdź sekcję z klasą "about"
-//   const aboutSection = document.querySelector(section);
-
-//   // Sprawdź, czy sekcja istnieje
-//   if (aboutSection) {
-//     // Przewiń do sekcji z płynnością
-//     aboutSection.scrollIntoView({
-//       behavior: "smooth",
-//       block: "start"
-//     });
-//   } else {
-//     console.error('Sekcja z klasą "about" nie została znaleziona.');
-//   }
-// }
-
 function updateFavicons() {
   const darkMode = window.matchMedia("(prefers-color-scheme: dark)").matches; // Sprawdza, czy aktywny jest tryb ciemny
 
@@ -165,23 +149,6 @@ document.addEventListener("DOMContentLoaded", toggleBgClass(".photo00", "bg1"));
 document.addEventListener("DOMContentLoaded", toggleBgClass(".photo01", "bg2"));
 document.addEventListener("DOMContentLoaded", toggleBgClass(".photo02", "bg3"));
 document.addEventListener("DOMContentLoaded", toggleBgClass(".photo03", "bg4"));
-//const header = document.querySelector("header");
-//const logo = document.querySelector(".logo");
-
-// const photo01 = document.querySelector(".photo01");
-// // Sprawdzamy, czy elementy zostały znalezione
-// if (body) {
-//   const photo01Bottom = photo01.getBoundingClientRect().bottom;
-//   const photo01Top = photo01.getBoundingClientRect().top;
-//   // Dodajemy nasłuchiwanie na zdarzenie scroll
-//   window.addEventListener("scroll", () => {
-//     if (window.scrollY > photo01Bottom || window.scrollY < photo01Top) {
-//       body.classList.remove("bg2"); // Dodaj klasę 'hide'
-//     } else if (window.scrollY <= photo01Bottom || window.scrollY >= photo01Top - 10)0 {
-//       body.classList.add("bg2"); // Usuń klasę 'hide'
-//     }
-//   });
-// }
 
 // Wywołanie funkcji
 // scrollToAboutSection(2000); // Przewiń w ciągu 2 sekund
