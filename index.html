@@ -50,6 +50,69 @@
     </div>
 
     <script>
+
+        function updateFavicons() {
+                const darkMode = window.matchMedia("(prefers-color-scheme: dark)").matches; // Sprawdza, czy aktywny jest tryb ciemny
+
+                // Definicje favicon dla jasnego i ciemnego trybu
+                const favicons = [
+                    {
+                        rel: "apple-touch-icon",
+                        sizes: "180x180",
+                        light: "/img/favicon_black/apple-touch-icon.png",
+                        dark: "/img/favicon_white/apple-touch-icon.png"
+                    },
+                    {
+                        rel: "icon",
+                        type: "image/x-icon",
+                        light: "/img/favicon_black/favicon.ico",
+                        dark: "/img/favicon_white/favicon.ico"
+                    },
+                    {
+                        rel: "icon",
+                        type: "image/png",
+                        sizes: "16x16",
+                        light: "/img/favicon_black/favicon-16x16.png",
+                        dark: "/img/favicon_white/favicon-16x16.png"
+                    },
+                    {
+                        rel: "icon",
+                        type: "image/png",
+                        sizes: "32x32",
+                        light: "/img/favicon_black/favicon-32x32.png",
+                        dark: "/img/favicon_white/favicon-32x32.png"
+                    },
+                    {
+                        rel: "icon",
+                        type: "image/png",
+                        sizes: "48x48",
+                        light: "/img/favicon_black/favicon-48x48.png",
+                        dark: "/img/favicon_white/favicon-48x48.png"
+                    }
+                ];
+
+                favicons.forEach(({ rel, type, sizes, light, dark }) => {
+                    let link = document.querySelector(`link[rel='${rel}'][sizes='${sizes}']`);
+
+                    // Jeśli link nie istnieje, utwórz go
+                    if (!link) {
+                        link = document.createElement("link");
+                        link.rel = rel;
+                        if (type) link.type = type;
+                        if (sizes) link.sizes = sizes;
+                        document.head.appendChild(link);
+                    }
+
+                    // Zmień favicon na odpowiednią wersję
+                    link.href = darkMode ? dark : light;
+                });
+            }
+
+            // Wywołanie funkcji przy pierwszym załadowaniu strony
+            updateFavicons();
+
+            // Nasłuchiwanie zmian w systemowych ustawieniach motywu
+            window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", updateFavicons);
         // Docelowy czas (02/02/2025, godzina 20:00 polskiego czasu)
         const targetDate = new Date('2025-02-02T19:00:00+01:00');
 
